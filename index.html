@@ -29,11 +29,31 @@
         /* Галерея видео */
         .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px; }
         .video-item { background: #e0e0e0; border-radius: 10px; padding: 5px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden; }
-        video { width: 100%; height: 350px; object-fit: cover; border-radius: 6px; display: block; }
+        
+        /* Улучшенный стиль для видео (адаптивность на телефонах) */
+        video { 
+            width: 100%; 
+            height: auto; 
+            max-height: 350px; 
+            object-fit: cover; 
+            border-radius: 6px; 
+            display: block; 
+            background-color: #000;
+        }
 
         .contact-box { background: var(--accent); color: white; padding: 30px; text-align: center; border-radius: 10px; margin-top: 40px; }
         .phone { font-size: 1.4em; font-weight: bold; color: var(--secondary); margin: 5px 0; }
         .email { font-size: 1.2em; color: #fff; margin-top: 10px; }
+        .email a { color: var(--secondary); text-decoration: none; }
+        .email a:hover { text-decoration: underline; }
+
+        /* Адаптивность для мобильных */
+        @media (max-width: 600px) {
+            header { padding: 20px 15px; }
+            .container { padding: 0 15px; }
+            table { font-size: 14px; }
+            th, td { padding: 8px; }
+        }
     </style>
 </head>
 <body>
@@ -48,7 +68,7 @@
     <h2>Наши услуги</h2>
     <div class="services-grid">
         <div class="card">
-            <h3>🏠  Ремонт и строительство</h3>
+            <h3>🏠 Ремонт и строительство</h3>
             <p>Ремонт квартир, строительство бань, беседок и домов. Поставка леса и дров из Башкирии.</p>
         </div>
         <div class="card">
@@ -56,7 +76,7 @@
             <p>Ремонт сантехники, электрики, ремонт бытовой техники (холодильники, стиральные, посудомоечные машины, микроволновки).</p>
         </div>
         <div class="card">
-            <h3>♻️  Скупка и прием</h3>
+            <h3>♻️ Скупка и прием</h3>
             <ul style="list-style: none; padding: 0;">
                 <li><strong>Бензопилы:</strong> 61-48-28</li>
                 <li><strong>Баллоны:</strong> 66-01-22</li>
@@ -65,23 +85,31 @@
             </ul>
         </div>
         <div class="card">
-            <h3>🚛  Грузоперевозки</h3>
+            <h3>🚛 Грузоперевозки</h3>
             <p>Перевозки любой сложности по Новотроицку и межгород.</p>
         </div>
     </div>
 
     <h2>Видео наших работ</h2>
     <div class="video-grid">
-        <div class="video-item"><video controls src="video/21749734378017.mp4"></video></div>
-        <div class="video-item"><video controls src="video/21749734640161.mp4"></video></div>
-        <div class="video-item"><video controls src="video/21749734836769.mp4"></video></div>
-        <div class="video-item"><video controls src="video/21749735098913.mp4"></video></div>
+        <div class="video-item">
+            <video controls preload="metadata" src="21749734378017.mp4"></video>
+        </div>
+        <div class="video-item">
+            <video controls preload="metadata" src="21749734640161.mp4"></video>
+        </div>
+        <div class="video-item">
+            <video controls preload="metadata" src="21749734836769.mp4"></video>
+        </div>
+        <div class="video-item">
+            <video controls preload="metadata" src="21749735098913.mp4"></video>
+        </div>
     </div>
 
     <h2>Цены на срубы из хвойного леса</h2>
     <table>
         <thead>
-<tr><th>Размер сруба / высота (м)</th><th>Цена (руб)</th></tr>
+            <tr><th>Размер сруба / высота (м)</th><th>Цена (руб)</th></tr>
         </thead>
         <tbody>
             <tr><td>3x3 x 2,3</td><td>55 200</td></tr>
@@ -110,7 +138,7 @@
         <div class="phone">8 987 847 4818</div>
         <div class="phone">66-01-22</div>
         <p>Дополнительный номер: 8 905 884 2952</p>
-        <div class="email">Email: <a href="mailto:Sergej_shinkarev@mail.ru" style="color: var(--secondary);">Sergej_shinkarev@mail.ru</a></div>
+        <div class="email">Email: <a href="mailto:sergej_shinkarev@mail.ru">sergej_shinkarev@mail.ru</a></div>
     </section>
 </div>
 
